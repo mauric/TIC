@@ -7,8 +7,8 @@
 % paramètre =
 %  =0 .
 alpha = 0.5
-p1 = 0.1
-p2 = 0.2
+p1 = 0.5
+p2 = 0.5
 N = 6
 S = seqbinaire(N,alpha)
 
@@ -18,18 +18,9 @@ output = bnsc(S,p1,p2)
 
 K = alpha*(1-p1)+(1-alpha)*p2
 HB = -K*log2(K)-(1-K)*log2(1-K);
-A1 = -p1*log(p1) - (1-p1)*log2(1-p1);
-A2 = -p2*log(p2) - (1-p2)*log2(1-p2);
+A1 = -p1*log(p1)
+A2 = 
 HAB = A1*alpha+A2*(1-alpha);
-I = HB - HAB;
 
 
-%%----------------------------
-% Estimation
-
-K = alpha*(1-p1e)+(1-alpha)*p2e
-HB = -K*log2(K)-(1-K)*log2(1-K);
-A1 = -p1e*log(p1e) - (1-p1e)*log2(1-p1e);
-A2 = -p2e*log(p2e) - (1-p2e)*log2(1-p2e);
-HAB = A1*alpha+A2*(1-alpha);
-Iest = HB - HAB;
+Iest =
