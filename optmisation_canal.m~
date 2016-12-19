@@ -1,0 +1,49 @@
+%% TP TIC
+% Codage de source et optimisation de la capacité du canal
+
+% Ecrire une fonction Matlab permettant d’engendrer une séquence binaire (pseudo) aléatoire
+% { } de longueur
+%  paramétrable. Cette fonction prendra également en entrée le
+
+clc
+clear all
+close all
+
+%% Parametres 
+alpha = 0.5; % alpha = p(X = 0)
+p1 = 0.1;    % probabilites de transition 
+p2 = 0.2;    % probabilites de transition
+N = 1e4; % vrai longuer du sequence
+%N = 6; %test 
+
+%% boucle principal - variation de alpha
+discretisation = 200;
+alpha = linspace(0,1,discretisation);
+
+for  i = 1:discretisation
+%% generation de sequence binaire
+X = seqbinaire(N,alpha(i));
+
+%% simulation du canal asymetrique
+%output_bsc = bsc(S,0.5) %canal symetrique pour verifier quand p1=p2
+Y = bnsc(X,p1,p2); %canal asymetrique
+
+%% Calcul estimation de la information mutuelle
+IXY(i) = info_mutuelle(X,Y);
+
+%% Calcul theorique de l'information mutuelle I(X|Y)
+K = alpha(i)*(1-p1)+(1-alpha(i))*p2
+HB = -K*log2(K)-(1-K)*log2(1-K);
+A1 = -p1*log(p1) - (1-p1)*log2(1-p1);
+A2 = -p2*log(p2) - (1-p2)*log2(1-p2);
+HAB = A1*alpha(i)+A2*(1-alpha(i));
+IXYest = HB - HAB;
+
+
+end
+
+figure()
+plot(alpha,IXY);
+
+figure()
+plot(alpha,IXYest);
