@@ -1,9 +1,6 @@
-%% TP TIC
-% Codage de source et optimisation de la capacité du canal
+%% TP TIC : Codage de source et optimisation de la capacité du canal
+%% Mauricio Caceres
 
-% Ecrire une fonction Matlab permettant d’engendrer une séquence binaire (pseudo) aléatoire
-% { } de longueur
-%  paramétrable. Cette fonction prendra également en entrée le
 
 clc
 clear all
