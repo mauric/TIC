@@ -1,4 +1,14 @@
 function Y=bnsc(X,p1,p2)
+    %Simulation du canal asymetrique
+    %
+    %    X    +--------------------+   Y
+    % +-----> |       CANAL        | +----->
+    %         +--------------------+
+    %
+
+
+
+
     % Selon le item 2 du sujet nous avons:
     % p(Y=1|X=0)=p1
     % p(Y=0|X=1)=p2

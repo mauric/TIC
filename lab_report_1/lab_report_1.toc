@@ -1,0 +1,12 @@
+\contentsline {chapter}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {1.1}Objectif}{2}
+\contentsline {subsection}{\numberline {1.1.1}Definitions}{2}
+\contentsline {chapter}{\numberline {2}Impl\IeC {\'e}mentation en MATLAB{\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \text {$\mathsurround \z@ \mathchar "472$}}}{4}
+\contentsline {section}{\numberline {2.1}G\IeC {\'e}n\IeC {\'e}ration d'une s\IeC {\'e}quence binaire}{4}
+\contentsline {section}{\numberline {2.2}Simulation du canal asym\IeC {\'e}trique}{4}
+\contentsline {section}{\numberline {2.3}Estimation de l'information mutuelle}{6}
+\contentsline {subsection}{\numberline {2.3.1}Estimation de probabilit\IeC {\'e}s sur l'entr\IeC {\'e}e et la sortie}{6}
+\contentsline {subsection}{\numberline {2.3.2}Estimation de probabilit\IeC {\'e}s conditionnelles}{7}
+\contentsline {chapter}{\numberline {3}Analyses et conclusions}{9}
+\contentsline {section}{\numberline {3.1}Courbes et donn\IeC {\'e}es obtenues}{9}
+\contentsline {section}{\numberline {3.2}Conclusion}{10}

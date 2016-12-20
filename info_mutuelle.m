@@ -1,27 +1,10 @@
 function [IXY]=info_mutuelle(X,Y) 
     %  Fonction pour  Estimation   I(X,Y) = H(Y) - H(Y|X);
-    %         +--------------------+
-    %    X    |                    |  Y
-    % +-----> |       CANAL        | +----->
-    %         |                    |
-    %         +--------------------+
-    %
 
     %% Variables
-    PY1X1 = 0;
-    PY1X0 = 0;
-    PY0X1 = 0;
-    PY0X0 = 0;
-
     N = length(X);
     NY = length(Y);
-    % if(N == NY)
-    %     pause()
-    %     display('error in input sizes')
-    % end
-
-
-
+    
     %% Estimation de P(X = 0) et P(X = 1)
     NXones = length(find(X));
     NXzeros = N - NXones ;
@@ -34,7 +17,12 @@ function [IXY]=info_mutuelle(X,Y)
     PY1 = NYones/NY;
     PY0 = 1 - PY1;
 
-    %% Estimation de probabilités conditional
+    %% Estimation de probabilités conditional  
+    PY1X1 = 0;
+    PY1X0 = 0;
+    PY0X1 = 0;
+    PY0X0 = 0;
+    
     for i = 1:N
         %% Estimation de P(Y = 0|X = 0) et P(Y = 0|X = 1) 
         if Y(i)==0 && X(i)== 0
