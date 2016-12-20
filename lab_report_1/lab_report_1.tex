@@ -109,13 +109,11 @@
 \section{Objectif}
 
 L’objectif de ce TP est de vérifier expérimentalement la théorie de Shannon en utilisant les
-outils de la théorie de l’information (entropie, information mutuelle). Plus précisément, il
+outils de la théorie de l’information (entropie, information mutuelle).\\ Plus précisément, il
 s’agira d’optimiser le couple source-canal : considérant un canal binaire non symétrique.\\ Il
-faudra déterminer \textbf{(théoriquement et expérimentalement) }les conditions optimales d’utilisation
+faudra déterminer (théoriquement et expérimentalement) les conditions optimales d’utilisation
 de ce canal, c’est-à-dire trouver la distribution de probabilité des symboles d’entrée maximisant
 l’information mutuelle entre l’entrée et la sortie.
-
-
 
 
 \subsection{Definitions}
@@ -135,7 +133,7 @@ que nous appellerons B
 \begin{equation}\label{key}
 B=\{y_0,y_1,...,y_{i-1}\}
 \end{equation}
-Chaque un des éléments de l'ensemblez
+Chaque un des éléments de l'ensemble
 \item[Canal binaire non symétrique]
 Le canal est caractérisé par ses probabilités de transition. Dans un canal no symétrique 
 les probabilités de transition ne sont pas égales.
@@ -161,7 +159,7 @@ les probabilités de transition ne sont pas égales.
 
 \item[Information mutuelle]
 L'information gagnée sur l'observation d'un évènement est à cause de que existe 
-une certaine quantité de surprise un niveuau d'incertitude. On utilise cette concept
+une certaine quantité de surprise un niveau d'incertitude. On utilise cette concept
 et la notion d'entropie pour comprendre comment est définie l'information mutuelle.\\
 \begin{figure}[h]
 	\centering
@@ -454,6 +452,8 @@ L'equation utilisé pour le calcul de $\alpha_opt$ est la suivante
 \begin{equation}\label{key}
 L = 2^{\frac{A1-A2}{1-p1-p2}}
 \end{equation}
+Le $\alpha_{exp} = 0.5176$ trouvé à l'indice 104 du vecteur de information mutuelle est 
+le $\alpha_{theorique} = 0.5176$ aussi.
 \begin{lstlisting}[caption={Resultats },label=code_resultqts]
 Capacite_experimental =
 0.3978
@@ -467,7 +467,7 @@ alphaopt = 0.5176
 Capacite_theorique = 0.3978
 \end{lstlisting}
 
-La capacité expérimental du canal calculé comme le maximum de la information mutuelle 
+La capacité expérimental du canal calculé comme le maximum de la information mutuelle $C_exp=0.3978$ et $C_theorique=0.3978$\\
 \begin{figure}[h]
 	\centering
 	\captionsetup{justification=centering}
@@ -476,7 +476,7 @@ La capacité expérimental du canal calculé comme le maximum de la information 
 	\caption{}
 	\label{fig:}
 \end{figure}
-Ici on voit dans la figure Fig\ref{fig:comparaison} comment les résultat de la simulation changent avec une longueur de séquence plus petit ($1e4$)
+Dans la figure Fig\ref{fig:comparaison} comment les résultat de la simulation changent avec une longueur de séquence plus petit ($1e4$). Il y a plus d'erreur dans l'estimation.
 \begin{figure}[h]
 	\centering
 	\captionsetup{justification=centering}
