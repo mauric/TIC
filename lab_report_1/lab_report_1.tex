@@ -424,38 +424,69 @@ L'effet de que les courbes sont presque identiques est que on a une séquence X 
 \end{figure}
 
 
+\begin{lstlisting}[caption={Code calcul de capacite du canal },label=code_]
+Capacite_experimental = max(IXY)
+
+A1 = -p1*log2(p1) - (1-p1)*log2(1-p1)
+A2 = -p2*log2(p2) - (1-p2)*log2(1-p2)
+
+%%Calcul de alpha optimale theorique
+L = 2^((A1-A2)/(1-p1-p2))
+alphaopt = (1-p2*(1+L))/((1-p1-p2)*(1+L))
+
+%%calcul de la capacite
+K = alphaopt*(1-p1)+(1-alphaopt)*p2
+HBm = -K*log2(K)-(1-K)*log2(1-K)
+HABm = A1*alphaopt+A2*(1-alphaopt)
+Capacite_theorique = HBm - HABm
+\end{lstlisting}
+
+
+
+
 \section{Conclusion}
 
+Les résultats trouvés sont très satisfaisant les valeur sont identiques pour la dernière simulation.
+L'equation utilisé pour le calcul de $\alpha_opt$ est la suivante
+\begin{equation}\label{key}
+\alpha_opt = \frac{1-p2(1+L)}{(1-p1-p2)(1+L)}
+\end{equation}
+\begin{equation}\label{key}
+L = 2^{\frac{A1-A2}{1-p1-p2}}
+\end{equation}
+\begin{lstlisting}[caption={Resultats },label=code_resultqts]
+Capacite_experimental =
+0.3978
 
+>> alpha(104) % trouve a l indice 104
+
+ans = 0.5176
+
+alphaopt = 0.5176
+
+Capacite_theorique = 0.3978
+\end{lstlisting}
+
+La capacité expérimental du canal calculé comme le maximum de la information mutuelle 
 \begin{figure}[h]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[width=0.7\linewidth]{../canal21}
+	\includegraphics[width=0.6\linewidth]{../canal3}
 	%todo caption
 	\caption{}
 	\label{fig:}
 \end{figure}
-
-
-\begin{figure}[h]
-	\centering
-	\captionsetup{justification=centering}
-	\includegraphics[width=0.7\linewidth]{../canal22}
-	%todo caption
-	\caption{}
-	\label{fig:}
-\end{figure}
-
+Ici on voit dans la figure Fig\ref{fig:comparaison} comment les résultat de la simulation changent avec une longueur de séquence plus petit ($1e4$)
 \begin{figure}[h]
 	\centering
 	\captionsetup{justification=centering}
 	\includegraphics[width=0.7\linewidth]{../canal23}
 	%todo caption
 	\caption{}
-	\label{fig:}
+	\label{fig:comparaison}
 \end{figure}
-Une autre méthode de simulation en utilisant des masques binaire a été implémente qui améliore beaucoup
-la vitesse de la simulation, mais malheureusement ne donne pas de bonnes valeur parce que elle est mal conçu. Un tâche pour améliorer le code pourra être bien implémenter cette solution.
+%Une autre méthode de simulation en utilisant des masques binaire a été implémente qui améliore beaucoup
+%la vitesse de la simulation, mais malheureusement ne donne pas de bonnes valeur parce que elle est mal conçu. Un tâche pour améliorer le code pourra être bien implémenter cette solution.
 
 %----------------------------------------------------------------------------------------
 %	FIN
